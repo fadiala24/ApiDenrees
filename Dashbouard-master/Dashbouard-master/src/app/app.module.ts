@@ -14,7 +14,7 @@ import { ListAdminComponent } from './admin/list-admin/list-admin.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { HttpClientModule } from '@angular/common/http';
-import { ToastrModule, ToastContainerModule } from 'ngx-toastr';
+import { ToastrModule, ToastContainerModule, ToastrService } from 'ngx-toastr';
 import {ToastModule} from 'primeng/toast';
 import { UpdateAdminComponent } from './admin/update-admin/update-admin.component';
 import { DetailAdminComponent } from './admin/detail-admin/detail-admin.component';
@@ -104,7 +104,7 @@ import { UpdateCategoryComponent } from './Category/update-category/update-categ
   
 
   ],
-  providers: [ConfirmationDialogService],
+  providers: [ToastrService,ConfirmationDialogService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

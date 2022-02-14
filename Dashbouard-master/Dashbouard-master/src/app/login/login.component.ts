@@ -21,8 +21,32 @@ export class LoginComponent implements OnInit {
   }
 
   showToaster(){
-    this.toastr.success("Hello, I'm the toastr message.")
+   // this.toastr.success("Hello, I'm the toastr message.")
+    this.toastr.success('We do have the Kapua suite available.', 'Turtle Bay Resort', {positionClass: 'toast-top-center'});
 }
+
+showSuccessWithTimeout(message: string | undefined, title: string | undefined, timespan: any){ 
+
+var options = {
+  "closeButton": true,
+  "debug": false,
+  "positionClass": "toast-top-full-width",
+  "onclick": null,
+  "showDuration": "300",
+  "hideDuration": "1000",
+  "timeOut": "300000",
+  "extendedTimeOut": "1000",
+  "showEasing": "swing",
+  "hideEasing": "linear",
+  "showMethod": "fadeIn",
+  "hideMethod": "fadeOut"
+};
+  this.toastr.success(message, title ,{ 
+  timeOut : timespan,
+  positionClass: 'toast-top-full-width' 
+   }) 
+  
+  }
 
   onLogin(loginForm: NgForm) {
     this.service.login(loginForm.value['login'], loginForm.value['password'])
