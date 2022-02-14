@@ -1,0 +1,47 @@
+<app-header></app-header>
+<app-menu></app-menu>
+            <!-- start page content -->
+            <div class="page-content-wrapper">
+                <div class="page-content">
+                              
+            <!--------------------------------------------- Contener de detail admin -------------------------------->
+                <div class="row justify-content-center" style="padding-top: 50px;">
+                    <div class="col-md-6">
+                        <div class="card card-box">
+                            <div class="card-head">
+                                <h4 >Information Personnelle</h4>
+                                <div class="tools" style="padding-left: 90%;">
+                                    <!-- <a class="fa fa-repeat btn-color box-refresh" href="javascript:;"></a> -->
+                                    <a class="t-close btn-danger fa fa-times " href="/listCategorie"></a>
+                                    <!-- <a class="t-close btn-color fa fa-times" href="javascript:;"></a> -->
+                                </div>
+                            </div>
+                            <div class="card-body ">
+            
+                                <div class="card card-topline-aqua">
+                                    <div class="card-body no-padding height-9">
+                                
+                                        
+                                        <ul class="list-group list-group-unbordered">
+                                            <li class="list-group-item">
+                                                <b>Nom: </b><b style="padding-left: 70%; color: #2D6000;">{{detailCategorie.nom}}</b>
+                                            </li>
+                                           
+                                            <li class="list-group-item">
+                                                <b>Photo</b> <b class="pull-right" style="padding-left: 50%; color: #2D6000;"></b>
+                                                <img style="width: 50%;" src="{{photo}} + {{detailCategorie.id}}" />
+                                            </li>
+                                                                     
+                                        </ul>
+                                        <!-- END SIDEBAR USER TITLE -->
+                                        <!-- SIDEBAR BUTTONS -->
+                                        
+                                        <!-- END SIDEBAR BUTTONS -->
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+             <!-- end page content -->
+                      
+            
+            

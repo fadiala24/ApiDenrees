@@ -1,0 +1,49 @@
+<!--Login.html-->
+<div class="container-fluid">
+    <div class="row contenair">
+        <div class="col-lg-1 col-xlg-3 col-md-12"></div>
+        <div class="row col-lg-10 col-xlg-9 col-md-12 content">
+            <div class="col-lg-6 col-xl-6 col-md-12">
+                <h2 style="text-align: center;"><b>BIENVENUE</b></h2>
+               <span></span><br><br><br>
+                <img  alt="login-image" src="../../assets/plugins/images/Groupe 1.png" width="85%" height="400px" >
+            </div>
+            <div class="col-lg-6 col-xl-6 col-md-12 sous-content">
+                <div class="card">
+                    <div class="card-body">
+                        <img  alt="logo" src="../../assets/plugins/images/suma.png" width="60%"  height="110px" class="img">
+                       
+                       <!-- #loginForm="ngForm"  (ngSubmit)="onLogin(loginForm)" -->
+                        <form #loginForm="ngForm"  (ngSubmit)="onLogin(loginForm)"  autocomplete="off" class="form-horizontal form-material form">
+                            <div class="form-group mb-4">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                                <label class="p-0"> <b>Login</b> </label>
+                                <div class="col-md-12 border-bottom p-0 input"> 
+                                    <input type="text" class="form-control p-0 border-0 " name ="login" #login="ngModel" ngModel required> 
+                                    <div [hidden]="login.valid || login.pristine" class="alert alert-danger">
+                                        Le login est requis
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group mb-4">
+                                <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                                <label for="example-email" class="p-0"> <b>Mot de passe</b> </label>
+                                <div class="border-bottom p-0 input">
+                                    <input type="password" class="form-control p-0 border-0" name="password" #password="ngModel" ngModel id="example-email" required>
+                                    <div [hidden]="password.valid || password.pristine" class="alert alert-danger">
+                                        Le mot de passe est requis
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group mb-4 contBtn" >
+                                <div class="col-sm-12 btn">
+                                    <button type="submit" class="btn btnC" [disabled]="loginForm.form.invalid"><b>CONNEXION</b>  </button>
+                                </div>
+                            </div>
+                        </form>  
+                    </div> 
+                </div>
+            </div> 
+        </div>
+    </div>
+</div>

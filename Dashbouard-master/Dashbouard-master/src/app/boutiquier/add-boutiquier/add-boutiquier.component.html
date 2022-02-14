@@ -1,0 +1,123 @@
+<app-header></app-header>
+<app-menu></app-menu>
+
+<div class="page-wrapper">
+    <div class="page-breadcrumb bg-white">
+        <div class="row align-items-center sous-header">
+            <div class="row col-lg-6 col-md-4 col-sm-4 col-xs-12">
+                <div class="col-lg-4 col-sm-4 col-md-6 col-xs-12">
+                    <a href="listBoutiquier">
+                     <i class="fas fa-chevron-left" style="font-weight: bold; font-size: 25px; color: #684f0e;" aria-hidden="true"></i>
+                    </a>
+                </div>
+                <div class="col-lg-8 col-sm-8 col-md-8 col-xs-12" style="float: left;">
+                    <h4 class="page-title">AJOUT Boutiquier</h4>
+                </div>
+            </div>
+            <div class="col-lg-6 col-sm-8 col-md-8 col-xs-12">
+                <div class="d-md-flex"> 
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+    <div class="row justify-content-center" style="margin: 0 auto;">
+
+        <div class="col-lg-12 col-xlg-12 col-md-12"></div>
+            <!-- Column -->
+            <!-- Column -->
+            <div class="col-lg-12 col-xlg-3 col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <form #AjoutForm="ngForm" (ngSubmit)="AjoutService(AjoutForm)" autocomplete="off" class="form-horizontal form-material">
+                            <div class="row"  *ngIf="showMsg">
+                                <div class="col-xs-12">
+                                  <p class="alert alert-success">
+                                      <strong>Registration Success!</strong> Please click here to login!.
+                        
+                                  </p>
+                                </div>
+                              </div>
+                            <div class="form-row" >
+                            <div class="form-group mb-4 col-md-6">
+                                <label class="col-md-12 p-0">Nom </label>
+                                <div class="col-md-10 border-bottom p-0">
+                                    <input type="text" placeholder="Saisissez un nom service"
+                                                class="form-control p-0 border-0" name="nom" ngModel  #nom="ngModel" required>
+                                    <div [hidden]="nom.valid || nom.pristine" class="alert alert-danger">
+                                        Le nom  est obligatoire
+                                    </div>
+                                </div>
+                            </div>                        
+                            <div class="form-group mb-4 col-md-6">
+                                <label class="col-md-12 p-0">Prenom </label>
+                                <div class="col-md-12 border-bottom p-0">
+                                    <input type="text" placeholder="Saisissez un Prenom"
+                                                class="form-control p-0 border-0" name="prenom" ngModel  #prenom="ngModel" required>
+                                    <div [hidden]="prenom.valid || prenom.pristine" class="alert alert-danger">
+                                        Le Prenom est obligatoire
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row" >
+                            <div class="form-group mb-4 col-md-6">
+                                <label class="col-md-12 p-0">Login </label>
+                                <div class="col-md-10 border-bottom p-0">
+                                    <input type="text" placeholder="Saisissez un login"
+                                                class="form-control p-0 border-0" name="login" ngModel  #login="ngModel" required>
+                                    <div [hidden]="login.valid || login.pristine" class="alert alert-danger">
+                                        Le login est obligatoire
+                                    </div>
+                                </div>
+                            </div>  
+                            <div class="form-group mb-4 col-md-6">
+                                <label class="col-md-12 p-0">Mot de passe </label>
+                                <div class="col-md-10 border-bottom p-0">
+                                    <input type="text" placeholder="Saisissez un mot de passe"
+                                                class="form-control p-0 border-0" name="password" ngModel  #password="ngModel" required>
+                                    <div [hidden]="password.valid || password.pristine" class="alert alert-danger">
+                                        Le mot de passe est obligatoire
+                                    </div>
+                                </div>
+                            </div>  
+                        </div>
+                            <div class="form-row">
+                            <div class="form-group mb-4 col-md-6">
+                                <label class="col-md-12 p-0">Telephone </label>
+                                <div class="col-md-12 border-bottom p-0">
+                                    <input type="text" placeholder="Saisissez un numéro de Telephone"
+                                                class="form-control p-0 border-0" name="telephone" ngModel  #telephone="ngModel" required>
+                                    <div [hidden]="telephone.valid || telephone.pristine" class="alert alert-danger">
+                                        Le Telephone est obligatoire
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="form-row" >
+                            <div class="form-group mb-4 col-md-6">
+                                <label class="col-md-12 p-0">Login </label>
+                                <div class="col-md-10 border-bottom p-0">
+                                    <input type="text" placeholder="Saisissez un login"
+                                                class="form-control p-0 border-0" name="login" ngModel  #login="ngModel" required>
+                                    <div [hidden]="nom.valid || nom.pristine" class="alert alert-danger">
+                                        Le nom du service est obligatoire
+                                    </div>
+                                </div>
+                            </div>                        
+                            
+                        </div>                           -->
+                            <div class="form-group mb-6">
+                                <div class="col-sm-12 align-button">
+                                    <button class="btn btn-success" type="submit"  [disabled]="AjoutForm.form.invalid">Ajouter</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-xlg-3 col-md-12"></div>
+    </div>
+</div>
+</div>
+

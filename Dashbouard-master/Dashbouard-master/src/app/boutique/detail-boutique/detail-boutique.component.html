@@ -1,0 +1,61 @@
+<app-header></app-header>
+<app-menu></app-menu>
+            <!-- start page content -->
+            <div class="page-content-wrapper">
+                <div class="page-content">
+                              
+            <!--------------------------------------------- Contener de detail Boutique -------------------------------->
+                <div class="row justify-content-center" style="padding-top: 50px;">
+                    <div class="col-md-6">
+                        <div class="card card-box">
+                            <div class="card-head">
+                                <h4 >Information Personnelle</h4>
+                                <div class="tools" style="padding-left: 90%;">
+                                    <!-- <a class="fa fa-repeat btn-color box-refresh" href="javascript:;"></a> -->
+                                    <a class="t-close btn-danger fa fa-times " href="/listBoutique"></a>
+                                    <!-- <a class="t-close btn-color fa fa-times" href="javascript:;"></a> -->
+                                </div>
+                            </div>
+                            <div class="card-body ">
+            
+                                <div class="card card-topline-aqua">
+                                    <div class="card-body no-padding height-9">
+                                
+                                        <div class="profile-usertitle">
+                                            <div class="profile-usertitle-name" style="text-align: center; font-size: 25px; font-weight: bold;"> Boutique {{detailBoutiques.nom}}</div>
+                                    
+                                        </div>
+                                        <ul class="list-group list-group-unbordered">
+                                            <li class="list-group-item">
+                                                <b>Quartier: </b><b style="padding-left: 70%; color: #2D6000;">{{detailBoutiques.quartier}}</b>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <b>Ville </b> <b class="pull-right" style="padding-left: 75%; color: #2D6000;">{{detailBoutiques.ville}}</b>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <b>Adresse</b> <b class="pull-right" style="padding-left: 70%; color: #2D6000;">{{detailBoutiques.adresse}}</b>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <b>Longitude </b> <b class="pull-right" style="padding-left: 70%; color: #2D6000;">{{detailBoutiques.longitude}}</b>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <b>Latitude</b> <b class="pull-right" style="padding-left: 72%; color: #2D6000;">{{detailBoutiques.latitude}}</b>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <b>Photo</b> <b class="pull-right" style="padding-left: 50%; color: #2D6000;"></b>
+                                                <img style="width: 50%;" src="{{photo}} + {{detailBoutiques.id}}" />
+                                            </li>
+                                                                      
+                                        </ul>
+                                        <!-- END SIDEBAR USER TITLE -->
+                                        <!-- SIDEBAR BUTTONS -->
+                                        
+                                        <!-- END SIDEBAR BUTTONS -->
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+             <!-- end page content -->
+                      
+            
+            

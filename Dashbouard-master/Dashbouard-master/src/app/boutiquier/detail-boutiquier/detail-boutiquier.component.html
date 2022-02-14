@@ -1,0 +1,52 @@
+<app-header></app-header>
+<app-menu></app-menu>
+            <!-- start page content -->
+            <div class="page-content-wrapper">
+                <div class="page-content">
+                              
+            <!--------------------------------------------- Contener de detail Boutique -------------------------------->
+                <div class="row justify-content-center" style="padding-top: 50px;">
+                    <div class="col-md-6">
+                        <div class="card card-box">
+                            <div class="card-head">
+                                <h4 >Information Personnelle</h4>
+                                <div class="tools" style="padding-left: 90%;">
+                                    <!-- <a class="fa fa-repeat btn-color box-refresh" href="javascript:;"></a> -->
+                                    <a class="t-close btn-danger fa fa-times " href="/listBoutiquier"></a>
+                                    <!-- <a class="t-close btn-color fa fa-times" href="javascript:;"></a> -->
+                                </div>
+                            </div>
+                            <div class="card-body ">
+            
+                                <div class="card card-topline-aqua">
+                                    <div class="card-body no-padding height-9">
+                                
+                                        <div class="profile-usertitle">
+                                            <div class="profile-usertitle-name" style="text-align: center; font-size: 25px; font-weight: bold;">{{detailBoutiquier.prenom}}&nbsp;&nbsp;{{detailBoutiquier.nom}}</div>
+                                    
+                                        </div>
+                                        <ul class="list-group list-group-unbordered">
+                                            <li class="list-group-item">
+                                                <b>Login: </b><b style="padding-left: 65%; color: #2D6000;">{{detailBoutiquier.login}}</b>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <b>Mot de passe </b> <b class="pull-right" style="padding-left: 60%; color: #2D6000;">{{detailBoutiquier.password}}</b>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <b>telephone</b> <b class="pull-right" style="padding-left: 62%; color: #2D6000;">{{detailBoutiquier.telephone}}</b>
+                                            </li>
+                                            
+                                                                      
+                                        </ul>
+                                        <!-- END SIDEBAR USER TITLE -->
+                                        <!-- SIDEBAR BUTTONS -->
+                                        
+                                        <!-- END SIDEBAR BUTTONS -->
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+             <!-- end page content -->
+                      
+            
+            
