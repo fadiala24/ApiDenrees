@@ -103,20 +103,18 @@ AjoutService(form: NgForm) {
         //console.log("---boutique---",boutique);
         console.log();
         
-        this.serves.detailCategorie(form.value['category']).subscribe((categorie:any)=>{
-
-          console.log(this.serves);
+        this.serves.detailCategorie(form.value['category']).subscribe((cat:any)=>{
+          console.log(cat);
   
-        let bout = {'nom': form.value['nom'],
-        'category': JSON.parse(categorie),
+        let bout = {'nom': form.value['nom'],  
          'quantite': form.value['quantite'],
                     'prix_unitaire': form.value['prix_unitaire'], 
                     'photo': this.photo[0].name,
+                    'category': JSON.parse(cat),
                      'boutiques':JSON.parse(boutique),
                       }
                       console.log("---BBBBBBBBB---",bout);      
-           this.service.updateProduit(data.id, bout).subscribe((dat: any)=>{
-                    
+           this.service.updateProduit(data.id, bout).subscribe((dat: any)=>{        
                     this.showToastSuccess();
                     this.router.navigate(["listProduit"]);
 

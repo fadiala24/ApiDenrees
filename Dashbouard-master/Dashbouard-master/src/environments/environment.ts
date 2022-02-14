@@ -7,7 +7,7 @@ export const environment = {
  
   photo:'http://localhost:8080/api/Boutique/addPhoto/',
   photos:'http://localhost:8080/api/Produit/addPhoto/',
-  Categorie:'http://localhost:8080/api/Produit/addPhoto/'
+  Categorie:'http://localhost:8080/api/Category/addPhoto/'
 }
 
 /*

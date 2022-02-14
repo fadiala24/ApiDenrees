@@ -74,7 +74,7 @@ export class AddCategoryComponent implements OnInit {
                         console.log("---BBBBBBBBB---",bout);      
              this.service.updateCategorie(data.id, bout).subscribe((dat: any)=>{
                       this.showToastSuccess();
-                      this.router.navigate(["listProduit"]);
+                      this.router.navigate(["listCategorie"]);
                       console.log("helle ++++++++++++", data);
                      });
       })

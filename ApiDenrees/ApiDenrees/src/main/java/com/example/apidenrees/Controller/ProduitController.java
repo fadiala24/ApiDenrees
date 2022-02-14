@@ -62,7 +62,7 @@ public class ProduitController {
     public byte[] getpHOTO(@PathVariable("idProd") Long Id ) throws IOException {
         return produitServiceImpl.getpHOTO(Id);
     }
-    @GetMapping("/getProduitByCategorie/{category}")
+    @GetMapping("/getProduitByCategorie/{id}")
     public List<Produits> getProduitByCategory(@PathVariable Long id) {
         return produitService.getProduitByCategory(id);
     }
