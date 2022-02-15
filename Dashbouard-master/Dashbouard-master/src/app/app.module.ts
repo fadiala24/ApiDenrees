@@ -38,7 +38,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {TableModule} from 'primeng/table';
 import {MultiSelectModule} from 'primeng/multiselect';
 import {AccordionModule} from 'primeng/accordion'; 
-import {MenuItem} from 'primeng/api'; 
+import {Message} from 'primeng//api';
+import {MessageService} from 'primeng/api';
 import {CarouselModule} from 'primeng/carousel';
 import {ButtonModule} from 'primeng/button';
 import { MessagesModule } from "primeng/messages";
@@ -48,6 +49,7 @@ import { AddCategoryComponent } from './Category/add-category/add-category.compo
 import { DetailCategoryComponent } from './Category/detail-category/detail-category.component';
 import { ListCategoryComponent } from './Category/list-category/list-category.component';
 import { UpdateCategoryComponent } from './Category/update-category/update-category.component';
+
 
 
 
@@ -100,11 +102,12 @@ import { UpdateCategoryComponent } from './Category/update-category/update-categ
     ButtonModule,
     MessagesModule,
     MessageModule,
+   
     RippleModule
   
 
   ],
-  providers: [ToastrService,ConfirmationDialogService],
+  providers: [ToastrService, MessageService,ConfirmationDialogService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

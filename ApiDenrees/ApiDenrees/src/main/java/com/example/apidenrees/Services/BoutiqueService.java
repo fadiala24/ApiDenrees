@@ -18,4 +18,6 @@ public interface BoutiqueService {
     public List<Boutiques> getBoutiqueByVille(String ville);
     public List<Boutiques> getBoutiqueByQuartier(String quartier);
     public byte[] getpHOTO(Long Id) throws IOException;
+
+
 }

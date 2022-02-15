@@ -1,5 +1,7 @@
 package com.example.apidenrees.Model;
 
+import com.example.apidenrees.Etat;
+
 import javax.persistence.*;
 
 @Entity
@@ -14,6 +16,18 @@ public class Client {
     private String login;
     private String password;
     private int telephone;
+
+    public Etat getEtat() {
+        return etat;
+    }
+
+    public void setEtat(Etat etat) {
+        this.etat = etat;
+    }
+
+    @Column(nullable = true)
+    @Enumerated(EnumType.STRING)
+    private Etat etat;
 
 
     public Long getId() {

@@ -1,5 +1,6 @@
 package com.example.apidenrees.Controller;
 
+import com.example.apidenrees.Model.Administrateur;
 import com.example.apidenrees.Model.Boutiquier;
 import com.example.apidenrees.Model.Client;
 import com.example.apidenrees.ServiceImpl.ClientServiceImpl;
@@ -54,5 +55,8 @@ public class ClientController {
     public Client ModifyPassword(@PathVariable Long id, @PathVariable String ancien, @PathVariable String nouveau){
         return this.clientServiceImpl.modifyPassword(id,ancien,nouveau);
     }
-
+    @GetMapping("/authentificationClient/{login}&{password}")
+    public Client connexion(@PathVariable("login") String login, @PathVariable("password") String password) {
+        return clientServiceImpl.findByLoginAndPassword(login, password);
+    }
 }

@@ -16,22 +16,22 @@ import java.util.List;
 @CrossOrigin("*")
 @RequestMapping("/api/Boutique")
 public class BoutiqueController {
-   @Autowired
+    @Autowired
     BoutiqueService boutiqueService;
 
-   @Autowired
-   BoutiqueServiceImpl boutiqueServiceImpl;
+    @Autowired
+    BoutiqueServiceImpl boutiqueServiceImpl;
     // ***************  Ajout d'un Boutique ***************
 
     @PostMapping("/addBoutique")
-    public Boutiques saveBoutique( Boutiques boutiques,@RequestParam("image") MultipartFile multipartFile) throws IOException {
-        return boutiqueService.aujout_boutique(boutiques,multipartFile);
+    public Boutiques saveBoutique(Boutiques boutiques, @RequestParam("image") MultipartFile multipartFile) throws IOException {
+        return boutiqueService.aujout_boutique(boutiques, multipartFile);
     }
 
     // ******************** Liste des Boutiques
 
     @GetMapping("/listBoutique")
-    List<Boutiques> listBoutique(){
+    List<Boutiques> listBoutique() {
         return this.boutiqueServiceImpl.listBoutique();
     }
 
@@ -45,36 +45,38 @@ public class BoutiqueController {
     // ************************* Suppression de Boutique ***************
 
     @DeleteMapping("/deleteBoutique/{id}")
-    public String delete(@PathVariable Long id){
+    public String delete(@PathVariable Long id) {
         return this.boutiqueServiceImpl.supprimer_boutique(id);
     }
 
     // ************************  Modification de Boutique ***************
     @PutMapping("/updateBoutique/{id}")
-    public String updateBoutique(@PathVariable Long id, @RequestBody Boutiques boutiques){
+    public String updateBoutique(@PathVariable Long id, @RequestBody Boutiques boutiques) {
         return this.boutiqueServiceImpl.modifier_boutique(boutiques, id);
     }
 
     // **************************** Affichage de la Boutique Par quartier et par ville ***************
-   @GetMapping("/getBoutiqueByVille&Quartier/ville={ville}&quartier={quartier}")
+    @GetMapping("/getBoutiqueByVille&Quartier/ville={ville}&quartier={quartier}")
     List<Boutiques> getBoutiquesByVilleAndQuartier(@PathVariable String ville, @PathVariable String quartier) {
-        return boutiqueServiceImpl.getBoutiqueByVilleAndQuartier(ville,quartier);
+        return boutiqueServiceImpl.getBoutiqueByVilleAndQuartier(ville, quartier);
     }
 
     // ****************************** Affichage de la boutique par quartier ********************
     @GetMapping("/getBoutiqueByQuartier/quartier={quartier}")
-    List <Boutiques> getBoutiquesByQuartier(@PathVariable String quartier) {
+    List<Boutiques> getBoutiquesByQuartier(@PathVariable String quartier) {
         return boutiqueServiceImpl.getBoutiqueByQuartier(quartier);
     }
+
     // *********************************** Affichage de la boutique ville ********************
-   @GetMapping("/getBoutiqueByVille/ville={ville}")
+    @GetMapping("/getBoutiqueByVille/ville={ville}")
     List<Boutiques> getBoutiquesByVille(@PathVariable String ville) {
         return this.boutiqueServiceImpl.getBoutiqueByVille(ville);
     }
 
     @GetMapping(value = "addPhoto/{idBoutic}", produces = {MediaType.IMAGE_JPEG_VALUE, MediaType.IMAGE_PNG_VALUE})
-    public byte[] getpHOTO(@PathVariable("idBoutic") Long Id ) throws IOException {
+    public byte[] getpHOTO(@PathVariable("idBoutic") Long Id) throws IOException {
         return boutiqueServiceImpl.getpHOTO(Id);
     }
+
 
 }

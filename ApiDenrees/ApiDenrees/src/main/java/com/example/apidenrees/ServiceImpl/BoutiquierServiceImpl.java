@@ -1,6 +1,8 @@
 package com.example.apidenrees.ServiceImpl;
 
 
+import com.example.apidenrees.Etat;
+import com.example.apidenrees.Model.Administrateur;
 import com.example.apidenrees.Model.Boutiques;
 import com.example.apidenrees.Model.Boutiquier;
 import com.example.apidenrees.Repositories.BoutiquierRepository;
@@ -10,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -67,4 +70,18 @@ public class BoutiquierServiceImpl implements BoutiquierService {
         }
 
     }
-}
+
+    @Override
+    public Boutiquier findByLoginAndPassword(String login, String password) {
+        Optional<Boutiquier> optionalBoutiquier= boutiquierRepository.findByLoginAndPassword(login,password);
+        if(optionalBoutiquier.isEmpty()){
+            return optionalBoutiquier.orElse(null);
+        }
+        if (optionalBoutiquier.get().getEtat()== Etat.DESACTIVER){
+            throw new IllegalStateException("Le compte est desactivé");
+        }
+        return optionalBoutiquier.get();
+    }
+    }
+
+

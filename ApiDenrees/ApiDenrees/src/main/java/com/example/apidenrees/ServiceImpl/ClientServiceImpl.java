@@ -1,5 +1,7 @@
 package com.example.apidenrees.ServiceImpl;
 
+import com.example.apidenrees.Etat;
+import com.example.apidenrees.Model.Administrateur;
 import com.example.apidenrees.Model.Boutiquier;
 import com.example.apidenrees.Model.Client;
 import com.example.apidenrees.Repositories.ClientRepository;
@@ -9,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -64,5 +67,17 @@ public class ClientServiceImpl implements ClientService {
         }
 
     }
+
+    @Override
+    public Client findByLoginAndPassword(String login, String password) {
+        Optional<Client> optionalClient = clientRepository.findByLoginAndPassword(login,password);
+        if(optionalClient.isEmpty()){
+            return optionalClient.orElse(null);
+        }
+        if (optionalClient.get().getEtat()== Etat.DESACTIVER){
+            throw new IllegalStateException("Le compte est desactivé");
+        }
+        return optionalClient.get();
     }
+}
 

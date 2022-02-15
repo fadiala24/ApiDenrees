@@ -30,6 +30,7 @@ public class Boutiques {
     private String latitude;
     private String longitude;
 
+
     public String getLongitude() {
         return longitude;
     }

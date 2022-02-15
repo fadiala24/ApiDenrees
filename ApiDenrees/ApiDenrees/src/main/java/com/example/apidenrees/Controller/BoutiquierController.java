@@ -1,5 +1,6 @@
 package com.example.apidenrees.Controller;
 
+import com.example.apidenrees.Model.Administrateur;
 import com.example.apidenrees.Model.Boutiques;
 import com.example.apidenrees.Model.Boutiquier;
 import com.example.apidenrees.Model.Passwordobjet;
@@ -20,14 +21,14 @@ public class BoutiquierController {
     // ***************  Ajout d'un Boutiquier***************
 
     @PostMapping("/addBoutiquier")
-    public String saveBoutiquier(@RequestBody Boutiquier boutiquier){
+    public String saveBoutiquier(@RequestBody Boutiquier boutiquier) {
         return boutiquierServiceImpl.aujout_boutiquier(boutiquier);
     }
 
     // ******************** Liste des Boutiquiers
 
     @GetMapping("/listBoutiquier")
-    List<Boutiquier> listBoutiquier(){
+    List<Boutiquier> listBoutiquier() {
         return this.boutiquierServiceImpl.listBoutiquier();
     }
 
@@ -41,20 +42,25 @@ public class BoutiquierController {
     // ************************* Suppression de Boutiquier ***************
 
     @DeleteMapping("/deleteBoutiquier/{id}")
-    public String delete(@PathVariable Long id){
+    public String delete(@PathVariable Long id) {
         return this.boutiquierServiceImpl.supprimer_boutiquier(id);
     }
 
     // ************************  Modification de Boutiquier ***************
     @PutMapping("/updateBoutiquier/{id}")
-    public String updateBoutiquier(@PathVariable Long id, @RequestBody Boutiquier boutiquier){
+    public String updateBoutiquier(@PathVariable Long id, @RequestBody Boutiquier boutiquier) {
         return this.boutiquierServiceImpl.modifier_boutiquier(boutiquier, id);
-}
+    }
 
-// *******************************Modification du password ******************************
+    // *******************************Modification du password ******************************
     @PutMapping("/modifyByPassword/{id}/{a}/{n}")
-    public Boutiquier ModifyByPassword(@PathVariable Long id,@PathVariable String a, @PathVariable String n){
+    public Boutiquier ModifyByPassword(@PathVariable Long id, @PathVariable String a, @PathVariable String n) {
         return this.boutiquierServiceImpl.modifyPassword(id, a, n);
 
+    }
+
+    @GetMapping("/authentificationAdmin/{login}&{password}")
+    public Boutiquier connexion(@PathVariable("login") String login, @PathVariable("password") String password) {
+        return boutiquierServiceImpl.findByLoginAndPassword(login, password);
     }
 }

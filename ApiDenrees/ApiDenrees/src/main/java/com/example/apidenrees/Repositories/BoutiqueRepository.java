@@ -1,11 +1,13 @@
 package com.example.apidenrees.Repositories;
 
+import com.example.apidenrees.Model.Administrateur;
 import com.example.apidenrees.Model.Boutiques;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface BoutiqueRepository extends JpaRepository<Boutiques, Long> {
 
@@ -20,4 +22,7 @@ public interface BoutiqueRepository extends JpaRepository<Boutiques, Long> {
      // ************** Requete pour afficher la Boutique selon la ville et le quartier
     @Query(value = "SELECT tous FROM Boutiques tous WHERE tous.ville = :ville AND tous.quartier = :quartier" )
     List<Boutiques> findBoutiqueByVilleQAndQuartier(@Param("ville")  String ville, @Param("quartier") String quartier);
+
+
+
 }

@@ -1,5 +1,6 @@
 package com.example.apidenrees.Model;
 
+import com.example.apidenrees.Etat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
@@ -71,7 +72,17 @@ public class Boutiquier {
     @OneToMany(mappedBy = "boutiquier")
     private List<Boutiques> boutique;
 
+    public Etat getEtat() {
+        return etat;
+    }
 
+    public void setEtat(Etat etat) {
+        this.etat = etat;
+    }
+
+    @Column(nullable = true)
+    @Enumerated(EnumType.STRING)
+    private Etat etat;
 
 
 

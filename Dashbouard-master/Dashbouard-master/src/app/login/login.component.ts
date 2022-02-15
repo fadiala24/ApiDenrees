@@ -3,22 +3,44 @@ import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { ServiceloginService } from './servicelogin.service';
+import {Message,MessageService} from 'primeng/api';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
+  providers: [MessageService]
 })
 export class LoginComponent implements OnInit {
 
+  msgs1: Message[];
+
+  msgs2: Message[];
   constructor(
+    private messageService: MessageService,
      private service: ServiceloginService,
      private route: Router,
      private toastr: ToastrService,
      ) { }
 
   ngOnInit(): void {
+
   }
+
+  addMessages() {
+    this.msgs2 = [
+        {severity:'success', summary:'Success', detail:'Message Content'}
+       
+    ];
+}
+
+clearMessages() {
+    this.msgs2 = [];
+}
+
+showViaService() {
+    this.messageService.add({severity:'success', summary:'Service Message', detail:'Via MessageService'});
+}
 
   showToaster(){
    // this.toastr.success("Hello, I'm the toastr message.")
@@ -56,7 +78,7 @@ var options = {
             localStorage.setItem('userData', JSON.stringify(data))
            this.route.navigateByUrl('accueil');
           }else{
-          this.showToaster();
+          this.showViaService();
           }
         }
       )

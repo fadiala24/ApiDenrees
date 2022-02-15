@@ -1,5 +1,6 @@
 package com.example.apidenrees.ServiceImpl;
 
+import com.example.apidenrees.Etat;
 import com.example.apidenrees.Model.Administrateur;
 import com.example.apidenrees.Model.Boutiques;
 import com.example.apidenrees.Model.Boutiquier;
@@ -19,6 +20,7 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -92,4 +94,6 @@ public class BoutiqueServiceImpl implements BoutiqueService {
         Path path = Paths.get(file.toURI());
         return Files.readAllBytes(path);
     }
+
+
 }

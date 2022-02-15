@@ -46,3 +46,13 @@
      margin: auto;
  }
 
+ :host ::ng-deep .p-message-custom {
+    background-color: #7b0ea0;
+    border: solid #f000bc;
+    border-width: 0 0 0 6px;
+    color: #c600fd;
+}
+
+:host ::ng-deep .p-message-close-icon {
+    color: #c907ff;
+}
