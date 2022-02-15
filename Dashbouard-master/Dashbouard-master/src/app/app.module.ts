@@ -49,6 +49,10 @@ import { AddCategoryComponent } from './Category/add-category/add-category.compo
 import { DetailCategoryComponent } from './Category/detail-category/detail-category.component';
 import { ListCategoryComponent } from './Category/list-category/list-category.component';
 import { UpdateCategoryComponent } from './Category/update-category/update-category.component';
+import { AddlocaliteComponent } from './localite/addlocalite/addlocalite.component';
+import { ListlocaliteComponent } from './localite/listlocalite/listlocalite.component';
+import { DetaillocaliteComponent } from './localite/detaillocalite/detaillocalite.component';
+import { UpdatelocaliteComponent } from './localite/updatelocalite/updatelocalite.component';
 
 
 
@@ -81,6 +85,10 @@ import { UpdateCategoryComponent } from './Category/update-category/update-categ
     DetailCategoryComponent,
     ListCategoryComponent,
     UpdateCategoryComponent,
+    AddlocaliteComponent,
+    ListlocaliteComponent,
+    DetaillocaliteComponent,
+    UpdatelocaliteComponent,
   ],
   imports: [
     BrowserModule,

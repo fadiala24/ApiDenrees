@@ -16,7 +16,12 @@ import { UpdateBoutiquierComponent } from './boutiquier/update-boutiquier/update
 import { AddCategoryComponent } from './Category/add-category/add-category.component';
 import { DetailCategoryComponent } from './Category/detail-category/detail-category.component';
 import { ListCategoryComponent } from './Category/list-category/list-category.component';
+import { UpdateCategoryComponent } from './Category/update-category/update-category.component';
 import { GuardService } from './guard.service';
+import { AddlocaliteComponent } from './localite/addlocalite/addlocalite.component';
+import { DetaillocaliteComponent } from './localite/detaillocalite/detaillocalite.component';
+import { ListlocaliteComponent } from './localite/listlocalite/listlocalite.component';
+import { UpdatelocaliteComponent } from './localite/updatelocalite/updatelocalite.component';
 import { LoginComponent } from './login/login.component';
 import { AddProduitComponent } from './produit/add-produit/add-produit.component';
 import { DetailProduitComponent } from './produit/detail-produit/detail-produit.component';
@@ -54,7 +59,12 @@ const routes: Routes = [
   {path: 'addCategorie', component: AddCategoryComponent},
   {path: 'listCategorie', component: ListCategoryComponent},
   {path: 'detailCategorie/:id', component: DetailCategoryComponent},
-  {path: 'updateCategorie/:id', component: DetailCategoryComponent},
+  {path: 'updateCategorie/:id', component: UpdateCategoryComponent},
+
+  {path: 'addLocalite', component: AddlocaliteComponent},
+  {path: 'listLocalite', component: ListlocaliteComponent},
+  {path: 'detailLocalite/:id', component: DetaillocaliteComponent},
+  {path: 'updateLocalite/:id', component: UpdatelocaliteComponent},
 
  
 

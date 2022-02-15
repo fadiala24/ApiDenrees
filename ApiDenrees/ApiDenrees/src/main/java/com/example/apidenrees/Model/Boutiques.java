@@ -14,8 +14,23 @@ public class Boutiques {
     private Long id;
 
     private String nom;
-    private String adresse;
-    private String ville;
+    private String photo;
+    private String latitude;
+    private String longitude;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "boutiques")
+    private List<Produits> produits;
+
+    @ManyToOne
+    private Boutiquier boutiquier;
+    @ManyToOne
+    private  Localite ville;
+    @ManyToOne
+    private  Localite quartier;
+
+    @ManyToMany
+    private List<Administrateur> administrateurs;
 
     public List<Produits> getProduits() {
         return produits;
@@ -24,12 +39,6 @@ public class Boutiques {
     public void setProduits(List<Produits> produits) {
         this.produits = produits;
     }
-
-    private String quartier;
-    private String photo;
-    private String latitude;
-    private String longitude;
-
 
     public String getLongitude() {
         return longitude;
@@ -47,16 +56,21 @@ public class Boutiques {
         this.latitude = latitude;
     }
 
-    @ManyToMany
-    private List<Administrateur> administrateurs;
+    public Localite getQuartier() {
+        return quartier;
+    }
 
-    @JsonIgnore
-    @OneToMany(mappedBy = "boutiques")
-    private List<Produits> produits;
+    public void setQuartier(Localite quartier) {
+        this.quartier = quartier;
+    }
 
-    @ManyToOne
-    private Boutiquier boutiquier;
+    public Localite getVille() {
+        return ville;
+    }
 
+    public void setVille(Localite ville) {
+        this.ville = ville;
+    }
 
     public String getNom() {
         return nom;
@@ -64,30 +78,6 @@ public class Boutiques {
 
     public void setNom(String nom) {
         this.nom = nom;
-    }
-
-    public String getAdresse() {
-        return adresse;
-    }
-
-    public void setAdresse(String adresse) {
-        this.adresse = adresse;
-    }
-
-    public String getVille() {
-        return ville;
-    }
-
-    public void setVille(String ville) {
-        this.ville = ville;
-    }
-
-    public String getQuartier() {
-        return quartier;
-    }
-
-    public void setQuartier(String quartier) {
-        this.quartier = quartier;
     }
 
     public String getPhoto() {

@@ -61,7 +61,6 @@ public class BoutiqueServiceImpl implements BoutiqueService {
         Boutiques boutiqueExistant = this.boutiqueRepository.findById(id).get();
 
         boutiqueExistant.setNom(boutiques.getNom());
-        boutiqueExistant.setAdresse(boutiques.getAdresse());
         boutiqueExistant.setVille(boutiques.getVille());
         boutiqueExistant.setQuartier(boutiques.getQuartier());
         boutiqueExistant.setBoutiquier(boutiques.getBoutiquier());
