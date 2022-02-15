@@ -10,7 +10,6 @@ public class Localite {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
-
     private String  ville;
 
     @Column(nullable = true)
